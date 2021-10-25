@@ -16,10 +16,11 @@ export default function Home() {
     fetch('http://localhost:3001/items')
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         setItems(data);
         setIsLoading(false)
       })
-  });
+  }, []);
 
   return (
     <div>

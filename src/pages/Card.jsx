@@ -12,7 +12,7 @@ export default function CardItem( id, name, valor, image) {
     socket.on('refreshCurrentValue', (data) => {
       if(id === data._id) setCurrentValue(valor)
     })
-  })
+  }, [])
 
   const handleClick = (e) => {
     socket.emit('increaseValue', { id })
